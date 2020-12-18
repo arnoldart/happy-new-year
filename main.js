@@ -9,7 +9,7 @@ const strTexts = yrs.textContent;
 const splitText = strText.split('')
 const splitTexts = strTexts.split('')
 
-let hrs = 18 //setting jam
+let hrs = 20 //setting jam
 let mnt = 03 //setting menit
 let scn = 58 //setting detik
 
