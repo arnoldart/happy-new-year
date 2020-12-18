@@ -1,44 +1,38 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title> 
-</head>
-<body>
-
-  <main class="side"></main>
-
-  <main class="container">
-    <main class="container__inner" id="container__inner">
-      <div class="th">
-        <h2 id="yrss">Happy New Year</h2>
-        <h1 id="yrs">2021</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Happy New Year</title>
+  </head>
+  <body>
+    <main class="container">
+      <main class="container__greet">
+        <h2 class="greet__big-text">Happy New Year</h2>
+        <h1 class="greet__year">2021</h1>
+      </main>
+      <div class="container__countdown">
+        <div class="card">
+          <div class="card__hour">
+            <h1 id="hour-num">00</h1>
+          </div>
+          <p class="card__hour-label">hours</p>
+        </div>
+        <div class="card">
+          <div class="card__minute">
+            <h1 id="minute-num">00</h1>
+          </div>
+          <p class="card__minute-label">minutes</p>
+        </div>
+        <div class="card">
+          <div class="card__second">
+            <h1 id="second-num">00</h1>
+          </div>
+          <p class="card__second-label">seconds</p>
+        </div>
       </div>
     </main>
-    <div class="container__inner2" id="containers">
-      <div class="card">
-        <div class="card__inner">
-          <h1 id="h">00</h1>
-        </div>
-        <p class="text">hours</p>
-      </div>
-      <div class="card">
-        <div class="card__inner">
-          <h1 id="m">00</h1>
-        </div>
-        <p class="text">minutes</p>
-      </div>
-      <div class="card">
-        <div class="card__inner2">
-          <h1 id="s">00</h1>
-        </div>
-        <p class="texts">seconds</p>
-      </div>
-    </div>
-  </main>
 
-  <script src="main.js"></script>
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

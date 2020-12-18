@@ -1,28 +1,64 @@
-const yrss = document.getElementById('yrss')
-const yrs = document.getElementById('yrs')
-const container = document.getElementById('container__inner')
-const containers = document.getElementById('containers')
+const $ = document.querySelector.bind(document)
 
-const strText = yrss.textContent;
-const strTexts = yrs.textContent;
+// capital letters mean you shouldn't change the value
+const CONTAINER = $(".container__greet")
+const CONTAINER_COUNTDOWN = $(".container__countdown")
+const BIG_TEXT = $(".greet__big-text")
+const YEAR_TEXT = $(".greet__year")
+const BIG_LETTERS = BIG_TEXT.textContent.split("")
+const YEAR_LETTERS = YEAR_TEXT.textContent.split("")
 
-const splitText = strText.split('')
-const splitTexts = strTexts.split('')
+// adjust targetted time here
+const targetHour = 20
+const targetMinute = 02
+const targetSecond = 10
 
-let hrs = 20 //setting jam
-let mnt = 03 //setting menit
-let scn = 58 //setting detik
+BIG_TEXT.textContent = ""
+YEAR_TEXT.textContent = ""
 
-yrss.textContent = ''
-yrs.textContent = ''
+BIG_LETTERS.forEach(
+  letter => (BIG_TEXT.innerHTML += `<span class="letter">${letter}</span>`)
+)
+YEAR_LETTERS.forEach(
+  letter => (YEAR_TEXT.innerHTML += `<span class="letter">${letter}</span>`)
+)
 
-for(let i = 0; i < splitText.length; i++) {
-  yrss.innerHTML += `<span>${splitText[i]}</span>`
+const startCountdown = (content, letters, delay) => {
+  setInterval(() => {
+    const date = new Date()
+    let hour = date.getHours()
+    let minute = date.getMinutes()
+    let second = date.getSeconds()
+
+    let charIdx = 0
+
+    // prevent memory leak by clearing interval when we're done
+    const complete = () => {
+      clearInterval(timer)
+      timer = null
+    }
+
+    const onTick = () => {
+      const span = content.querySelectorAll("span")[charIdx]
+
+      if (hour >= targetHour && minute >= targetMinute && second >= targetSecond) {
+        span.classList.add("fade")
+      }
+
+      charIdx++
+
+      if (charIdx === letters.length) {
+        complete()
+        return
+      }
+    }
+
+    let timer = setInterval(onTick, 50)
+  }, delay)
 }
 
-for(let a = 0; a < splitTexts.length; a++) {
-  yrs.innerHTML += `<span>${splitTexts[a]}</span>`
-}
+startCountdown(BIG_TEXT, BIG_LETTERS, 1000)
+startCountdown(YEAR_TEXT, YEAR_LETTERS, 2000)
 
 setInterval(() => {
   let date = new Date()
@@ -30,77 +66,12 @@ setInterval(() => {
   let m = date.getMinutes()
   let s = date.getSeconds()
 
-  let char = 0
-  let timer = setInterval(onTick, 50)
+  $("#hour-num").innerHTML = h < 10 ? `0${h}` : h
+  $("#minute-num").innerHTML = m < 10 ? `0${m}` : m
+  $("#second-num").innerHTML = s < 10 ? `0${s}` : s
 
-  function onTick(){
-    const span = yrss.querySelectorAll('span')[char]
-
-    if(h === hrs && m == mnt && s >= scn ) {
-      span.classList.add('fade')
-    }
-    char++
-    if( char === splitText.length) {
-      complete()
-      return
-    }
-
+  if (h >= targetHour && m >= targetMinute && s >= targetSecond) {
+    CONTAINER.style.marginTop = "0rem"
+    CONTAINER_COUNTDOWN.style.opacity = 0
   }
-
-  function complete() {
-    clearInterval(timer)
-    timer = null
-  }
-
-}, 1000)
-
-setInterval(() => {
-  let date = new Date()
-  let h = date.getHours()
-  let m = date.getMinutes()
-  let s = date.getSeconds()
-
-  let char = 0
-  let timer = setInterval(onTick, 50)
-
-  function onTick(){
-    const span = yrs.querySelectorAll('span')[char]
-
-    if(h === hrs && m == mnt && s >= scn) {
-      span.classList.add('fade')
-    }
-    char++
-    if( char === splitTexts.length) {
-      complete()
-      return
-    }
-
-  }
-
-  function complete() {
-    clearInterval(timer)
-    timer = null
-  }
-
-}, 2000)
-
-setInterval(() => {
-  let date = new Date()
-  let h = date.getHours()
-  let m = date.getMinutes()
-  let s = date.getSeconds()
-
-  document.getElementById('h').innerHTML = h < 10 ? `0${h}` : h
-  document.getElementById('m').innerHTML = m < 10 ? `0${m}` : m
-  document.getElementById('s').innerHTML = s < 10 ? `0${s}` : s
-
-  if(h === hrs && m === mnt && s >= scn) {
-    container.style.marginTop = "0rem"
-    containers.style.marginTop = "2rem"
-  }
-  
-}, 1)
-
-  
-
-
+}, 100)

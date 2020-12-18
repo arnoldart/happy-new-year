@@ -1,67 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-
 body {
-  background-color: #15162D;
+  background-color: #15162d;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .side {
   background-color: white;
 }
 
-.th {
+.container__greet {
   color: white;
   text-align: center;
   letter-spacing: 1rem;
+  transition: all 0.5s ease;
 }
 
-
-span {
+.letter {
   opacity: 0;
   font-size: 3rem;
-  transform: translateY(50px);
+  transform: translateY(10rem);
   display: inline-block;
 }
 
 .fade {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(4rem);
+  font-size: 6rem;
 }
 
-.hpy {
-  display: flex;
+.greet__big-text span:nth-child(6),
+.greet__big-text span:nth-child(10) {
+  margin: 0 2rem;
 }
 
-#yrss {
-  margin: 0 .5rem;
-}
-
-#yrss span:nth-child(6),
-#yrss span:nth-child(10) {
-  margin: 0 .5rem;
-}
-
-#container__inner {
-  margin-top: -8.1rem;
-  transition: all .5s ease;
-}
-
-.container__inner2 {
+.container__countdown {
   display: flex;
   justify-content: center;
+  transition: opacity ease-out 0.2s;
 }
-
 
 .card {
   text-align: center;
@@ -77,8 +63,9 @@ span {
   margin: 0 1rem;
 }
 
-.card__inner {
-  background-color: #269FF5;
+.card__hour,
+.card__minute {
+  background-color: #269ff5;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -86,8 +73,8 @@ span {
   font-size: 3rem;
 }
 
-.card__inner2 {
-  background-color: #FE0069;
+.card__second {
+  background-color: #fe0069;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -95,18 +82,20 @@ span {
   font-size: 3rem;
 }
 
-.text {
+.card__hour-label,
+.card__minute-label {
   padding: 1rem;
-  background-color: #1E86DE;
+  background-color: #1e86de;
   font-size: 1.5rem;
   font-weight: 100;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
-.texts  {
-  background-color: #F00164;
+
+.card__second-label {
+  background-color: #f00164;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: 100;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   text-align: center;
 }
