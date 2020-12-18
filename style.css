@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+body {
+  background-color: #15162D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.side {
+  background-color: white;
+}
+
+.th {
+  color: white;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+
+
+span {
+  opacity: 0;
+  font-size: 3rem;
+  transform: translateY(50px);
+  display: inline-block;
+}
+
+.fade {
+  transition: all .5s ease;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.hpy {
+  display: flex;
+}
+
+#yrss {
+  margin: 0 .5rem;
+}
+
+#yrss span:nth-child(6),
+#yrss span:nth-child(10) {
+  margin: 0 .5rem;
+}
+
+#container__inner {
+  margin-top: -8.1rem;
+  transition: all .5s ease;
+}
+
+.container__inner2 {
+  display: flex;
+  justify-content: center;
+}
+
+
+.card {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 1rem;
+}
+
+.card2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 1rem;
+}
+
+.card__inner {
+  background-color: #269FF5;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 10rem;
+  font-size: 3rem;
+}
+
+.card__inner2 {
+  background-color: #FE0069;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 10rem;
+  font-size: 3rem;
+}
+
+.text {
+  padding: 1rem;
+  background-color: #1E86DE;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: .5rem;
+}
+.texts  {
+  background-color: #F00164;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: .5rem;
+  text-align: center;
+}
