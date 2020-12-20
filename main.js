@@ -9,9 +9,9 @@ const BIG_LETTERS = BIG_TEXT.textContent.split("")
 const YEAR_LETTERS = YEAR_TEXT.textContent.split("")
 
 // adjust targetted time here
-const targetHour = 20
-const targetMinute = 02
-const targetSecond = 10
+const targetHour = 18
+const targetMinute = 34
+const targetSecond = 58
 
 BIG_TEXT.textContent = ""
 YEAR_TEXT.textContent = ""
@@ -71,7 +71,7 @@ setInterval(() => {
   $("#second-num").innerHTML = s < 10 ? `0${s}` : s
 
   if (h >= targetHour && m >= targetMinute && s >= targetSecond) {
-    CONTAINER.style.marginTop = "0rem"
+    CONTAINER.style.marginTop = "7rem"
     CONTAINER_COUNTDOWN.style.opacity = 0
   }
-}, 100)
+}, 1)

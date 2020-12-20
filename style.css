@@ -7,14 +7,10 @@
 }
 
 body {
-  background-color: #15162d;
+  background-color: #15162d; 
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.side {
-  background-color: white;
 }
 
 .container__greet {
@@ -22,6 +18,7 @@ body {
   text-align: center;
   letter-spacing: 1rem;
   transition: all 0.5s ease;
+  margin-top: -8rem;
 }
 
 .letter {
@@ -40,7 +37,7 @@ body {
 
 .greet__big-text span:nth-child(6),
 .greet__big-text span:nth-child(10) {
-  margin: 0 2rem;
+  margin: 0 1rem;
 }
 
 .container__countdown {
@@ -99,3 +96,80 @@ body {
   letter-spacing: 0.5rem;
   text-align: center;
 }
+
+
+
+/* .container__greet {
+  margin-top: -8rem;
+  transition: all .5s ease;
+  color: white;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+
+.greet__big-text span:nth-child(6),
+.greet__big-text span:nth-child(10) {
+  margin: 0 1rem;
+}
+
+.letter {
+  opacity: 0;
+  font-size: 3rem;
+  transform: translateY(10rem);
+  display: inline-block;
+}
+
+.fade {
+  transition: all .5s ease;
+  opacity: 1;
+  transform: translateY(4rem);
+}
+
+.container__countdown {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 1rem;
+}
+
+.card__hour,
+.card__minute {
+  background-color: #269FF5;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 10rem;
+  font-size: 3rem;
+}
+
+.card__second {
+  background-color: #FE0069;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 10rem;
+  font-size: 3rem;
+}
+
+.card__hour-label,
+.card__minute-label {
+  padding: 1rem;
+  background-color: #1E86DE;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: .5rem;
+}
+
+.card__second-label {
+  background-color: #F00164;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: .5rem;
+  text-align: center;
+} */
