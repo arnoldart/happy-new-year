@@ -9,9 +9,9 @@ const BIG_LETTERS = BIG_TEXT.textContent.split("")
 const YEAR_LETTERS = YEAR_TEXT.textContent.split("")
 
 // adjust targetted time here
-const targetHour = 18
-const targetMinute = 34
-const targetSecond = 58
+const targetHour = 00
+const targetMinute = 00
+const targetSecond = 00
 
 BIG_TEXT.textContent = ""
 YEAR_TEXT.textContent = ""
@@ -41,7 +41,7 @@ const startCountdown = (content, letters, delay) => {
     const onTick = () => {
       const span = content.querySelectorAll("span")[charIdx]
 
-      if (hour >= targetHour && minute >= targetMinute && second >= targetSecond) {
+      if (hour === targetHour && minute === targetMinute && second >= targetSecond) {
         span.classList.add("fade")
       }
 
@@ -70,7 +70,7 @@ setInterval(() => {
   $("#minute-num").innerHTML = m < 10 ? `0${m}` : m
   $("#second-num").innerHTML = s < 10 ? `0${s}` : s
 
-  if (h >= targetHour && m >= targetMinute && s >= targetSecond) {
+  if (h === targetHour && m === targetMinute && s >= targetSecond) {
     CONTAINER.style.marginTop = "7rem"
     CONTAINER_COUNTDOWN.style.opacity = 0
   }
